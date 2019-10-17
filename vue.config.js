@@ -15,15 +15,7 @@ module.exports = {
   },
   chainWebpack: config => {
     config.resolve.alias
-      .set('~', path.resolve('packages'));
-    config.module
-      .rule('ts')
-      .include.add('/packages')
-      .end()
-      .use('bable')
-      .loader('bable-loader')
-      .tap(options => {
-        return options;
-      });
+      .set('~', path.resolve('packages'))
+      .set('types', path.resolve('types'));
   },
 }
